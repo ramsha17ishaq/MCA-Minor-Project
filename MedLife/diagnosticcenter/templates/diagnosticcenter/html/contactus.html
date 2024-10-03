@@ -1,0 +1,154 @@
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactUs</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body style=" background-image: linear-gradient(to right, rgb(231, 206, 224),rgb(224, 194, 220),rgb(134, 46, 115) )">
+    
+
+    {% include 'diagnosticcenter/html/dc_navbar.html'%}
+
+   {% if messages %}
+
+    {% for m in messages %}
+
+  
+
+  <div class ="row justify-content-center mt-9" style="margin-top:60px;">
+    <div class="col-6">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{m}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+  </div>
+
+     {% endfor %}
+
+       {%endif%}
+
+       
+    <div class=" container-fluid mt-4 ">
+        
+        <h2 class="" style="text-align:center ;color: rgb(11, 137, 228) ; font-family: Castellar "> FEEL FREE TO CONTACT US </h2>
+    </div>
+
+    
+    <!-- <h1 style="text-align:center; color:rgb(54, 93, 161)">This is ContactUs</h1> -->
+ 
+    <form method="POST" action="/contactus/" class="needs-validation" novalidate >
+      {% csrf_token %}
+        
+      
+        <div class="container   " style="margin: center;" >
+          <div class="form-control  row mt-3 bg-secondary "style= " width:450px; height:380px; margin-left:410px"  >
+
+            
+
+            <div class="mb-3 mt-4 row">
+                <label for="inputName" class="col-sm-4 col-form-label"> Name </label>
+                <div class="col-sm-8">
+                  <input type="txt" required class="form-control" name="txtname" id="inputName" placeholder="Enter Your Name">
+                
+                  <div class="invalid-feedback">
+                    Please provide your name.
+                  </div>
+            
+                
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="inpute-mail" class="col-sm-4 col-form-label"> E-mail </label>
+                <div class="col-sm-8">
+                  <input type="email" required class="form-control" name="txtemail" id="inpute-mail" placeholder="Enter Your E-mail">
+                
+                
+                  <div class="invalid-feedback">
+                    Please provide your e-mail
+                  </div>
+                </div>
+            </div>
+
+            
+            <div class="mb-3 row">
+                <label for="inputPhoneNo." class="col-sm-4 col-form-label"> PhoneNo. </label>
+                <div class="col-sm-8">
+                  <input type="number" required class="form-control" name="txtphone" id="inputPhoneNo." placeholder="Enter Your PhoneNo.">
+                
+                
+                  <div class="invalid-feedback">
+                    Please provide your phone number
+                  </div>
+                </div>
+            </div>
+
+
+            
+            
+            <div class="mb-3 row">
+              <label for="inputQuery" class="col-sm-4 col-form-label"> Your Query </label>
+             
+              <div class="col-sm-8">
+              <textarea class="form-control" required name="txtquery" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Query"></textarea>
+              
+            
+              <div class="invalid-feedback">
+                Query required
+              </div>
+            </div>
+            
+            </div>
+
+         
+            
+            <div class=" row" >
+
+            <div class="col-sm-8" >
+            <button type="submit" class="btn btn-success" style="margin-left: 150px;"> Submit </button>
+            </div>
+            </div> 
+
+
+        </div>
+    
+      </div>
+
+    </form>
+    
+    <div class="container">
+ 
+      <div class="col-sm-10">
+          <a href="{{'/#testdiv'}}" class="btn btn-danger" > MedicalTest  </a>
+          <a href="{{'/#healthdiv'}}" class="btn btn-danger" > HealthCampaign  </a>
+      
+        </div>
+      <!-- <a href="{{'/#testdiv'}}" class=" btn-btn-danger"> MedicalTest </a> -->
+  </div>
+
+  <footer class="footer fixed-bottom">
+  
+
+    <!-- FOOTER CODE STARTS HERE -->
+    {%include 'diagnosticcenter/html/dc_footer.html'%}
+    
+    <!-- FOOTER CODE ENDS HERE -->
+    </footer>
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+    <script src="{% static 'diagnosticcenter/js/validation.js'%}"></script>
+
+</body>
+</html>

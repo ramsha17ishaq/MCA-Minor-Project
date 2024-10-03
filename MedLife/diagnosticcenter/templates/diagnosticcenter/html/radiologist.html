@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <title>Radiologist</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    {% include 'diagnosticcenter/html/dc_navbar.html'%}
+
+<div>
+  <!-- <h2>Card Image Overlay</h2>
+  <p>Turn an image into a card background and use .card-img-overlay to overlay the card's text:</p> -->
+  <div class="card img-fluid" style="width:100%;height:100%">
+    <img class="card-img-top" src="{%static 'diagnosticcenter/images/Radiologist1.jpeg'%}" alt="Card image" style="width:100%">
+    <div class="card-img-overlay">
+      <p class="card-title"  style="font-size: 48px;">OUR EXPERTS </p>
+      <p class="card-text" style="color: rgb(0, 108, 186);">A radiologist is a specialist doctor who uses medical imaging such as x-ray, MRI, CT, ultrasound and angiography, to diagnose and treat human disease or injury. Radiologists undergo lengthy training and assessment in order to be accredited by relevant governing boards and colleges around the world.Radiologists apply advanced knowledge of anatomy and pathology to interpret the findings of medical imaging examinations and to formulate written diagnostic reports to assist other doctors and health professionals.
+
+        Radiologists work as part of a clinical team to aid other doctors and health professionals in choosing appropriate imaging tests for their patients, that balance the benefits against the risks, with a particular focus on preventing unnecessary ionizing radiation exposure.
+        
+        Radiologists are often called upon to perform image-guided procedures, such as biopsies, drainages and targeted injections, to directly enable diagnosis and treatment of patients. A subset of radiologists also perform more advanced image-guided procedures including vascular stenting and aneurysm coiling.
+        
+        </p>
+      <a href="{{'/aboutus'}}" class="btn btn-primary">Back</a>
+    </div>
+  </div>
+</div>
+
+
+<footer class="footer fixed-bottom">
+  
+
+    <!-- FOOTER CODE STARTS HERE -->
+    {%include 'diagnosticcenter/html/dc_footer.html'%}
+    
+    <!-- FOOTER CODE ENDS HERE -->
+    </footer>
+  
+
+</body>
+</html>
